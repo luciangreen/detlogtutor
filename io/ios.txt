@@ -1,0 +1,402 @@
+detlogtutor: 200 inputs and outputs, from real runs (io/ios.pl has the same as Prolog facts).
+
+1. expected(splits, [3,5,2,0])
+   => [[]+[3,5,2,0],[3]+[5,2,0],[3,5]+[2,0],[3,5,2]+[0],[3,5,2,0]+[]]
+2. grade_model(splits)
+   => pass
+3. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+4. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+5. expected(pairs, [2,5,5,1])
+   => [2-2,2-5,2-5,2-1,5-2,5-5,5-5,5-1,5-2,5-5,5-5,5-1,1-2,1-5,1-5,1-1]
+6. grade_model(selects)
+   => pass
+7. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+8. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+9. expected(splits, [2])
+   => [[]+[2],[2]+[]]
+10. grade_model(big_members)
+   => pass
+11. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+12. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+13. expected(pairs, [0,1,4])
+   => [0-0,0-1,0-4,1-0,1-1,1-4,4-0,4-1,4-4]
+14. grade_model(splits)
+   => pass
+15. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+16. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+17. expected(big_members, [1])
+   => []
+18. grade_model(big_members)
+   => pass
+19. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+20. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+21. expected(big_members, [])
+   => []
+22. grade_model(pairs)
+   => pass
+23. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+24. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+25. expected(pairs, [])
+   => []
+26. grade_model(big_members)
+   => pass
+27. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+28. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+29. expected(splits, [0,3,2,1])
+   => [[]+[0,3,2,1],[0]+[3,2,1],[0,3]+[2,1],[0,3,2]+[1],[0,3,2,1]+[]]
+30. grade_model(pairs)
+   => pass
+31. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+32. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+33. expected(splits, [1,1])
+   => [[]+[1,1],[1]+[1],[1,1]+[]]
+34. grade_model(splits)
+   => pass
+35. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+36. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+37. expected(pairs, [3,3])
+   => [3-3,3-3,3-3,3-3]
+38. grade_model(pairs)
+   => pass
+39. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+40. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+41. expected(selects, [4])
+   => [4/[]]
+42. grade_model(splits)
+   => pass
+43. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+44. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+45. expected(big_members, [4,3])
+   => [4,3]
+46. grade_model(pairs)
+   => pass
+47. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+48. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+49. expected(selects, [6])
+   => [6/[]]
+50. grade_model(pairs)
+   => pass
+51. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+52. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+53. expected(selects, [5])
+   => [5/[]]
+54. grade_model(splits)
+   => pass
+55. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+56. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+57. expected(splits, [6,5,1,6])
+   => [[]+[6,5,1,6],[6]+[5,1,6],[6,5]+[1,6],[6,5,1]+[6],[6,5,1,6]+[]]
+58. grade_model(pairs)
+   => pass
+59. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+60. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+61. expected(selects, [])
+   => []
+62. grade_model(selects)
+   => pass
+63. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+64. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+65. expected(big_members, [2,5,1])
+   => [5]
+66. grade_model(big_members)
+   => pass
+67. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+68. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+69. expected(splits, [3])
+   => [[]+[3],[3]+[]]
+70. grade_model(splits)
+   => pass
+71. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+72. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+73. expected(big_members, [2,2,1])
+   => []
+74. grade_model(big_members)
+   => pass
+75. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+76. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+77. expected(big_members, [5,6,1,3])
+   => [5,6,3]
+78. grade_model(selects)
+   => pass
+79. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+80. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+81. expected(big_members, [5,1,6,2])
+   => [5,6]
+82. grade_model(pairs)
+   => pass
+83. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+84. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+85. expected(big_members, [])
+   => []
+86. grade_model(splits)
+   => pass
+87. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+88. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+89. expected(big_members, [3,0])
+   => [3]
+90. grade_model(splits)
+   => pass
+91. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+92. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+93. expected(splits, [1,1,3])
+   => [[]+[1,1,3],[1]+[1,3],[1,1]+[3],[1,1,3]+[]]
+94. grade_model(big_members)
+   => pass
+95. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+96. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+97. expected(big_members, [])
+   => []
+98. grade_model(selects)
+   => pass
+99. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+100. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+101. expected(pairs, [0,4,6])
+   => [0-0,0-4,0-6,4-0,4-4,4-6,6-0,6-4,6-6]
+102. grade_model(pairs)
+   => pass
+103. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+104. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+105. expected(splits, [])
+   => [[]+[]]
+106. grade_model(splits)
+   => pass
+107. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+108. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+109. expected(selects, [3,3])
+   => [3/[3],3/[3]]
+110. grade_model(splits)
+   => pass
+111. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+112. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+113. expected(big_members, [5,0])
+   => [5]
+114. grade_model(selects)
+   => pass
+115. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+116. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+117. expected(big_members, [3,5])
+   => [3,5]
+118. grade_model(selects)
+   => pass
+119. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+120. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+121. expected(pairs, [])
+   => []
+122. grade_model(splits)
+   => pass
+123. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+124. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+125. expected(pairs, [5,1])
+   => [5-5,5-1,1-5,1-1]
+126. grade_model(big_members)
+   => pass
+127. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+128. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+129. expected(splits, [3,4,0])
+   => [[]+[3,4,0],[3]+[4,0],[3,4]+[0],[3,4,0]+[]]
+130. grade_model(selects)
+   => pass
+131. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+132. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+133. expected(selects, [6])
+   => [6/[]]
+134. grade_model(splits)
+   => pass
+135. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+136. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+137. expected(selects, [])
+   => []
+138. grade_model(big_members)
+   => pass
+139. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+140. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+141. expected(splits, [6,3,0,6])
+   => [[]+[6,3,0,6],[6]+[3,0,6],[6,3]+[0,6],[6,3,0]+[6],[6,3,0,6]+[]]
+142. grade_model(selects)
+   => pass
+143. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+144. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+145. expected(pairs, [6,6,2,0])
+   => [6-6,6-6,6-2,6-0,6-6,6-6,6-2,6-0,2-6,2-6,2-2,2-0,0-6,0-6,0-2,0-0]
+146. grade_model(selects)
+   => pass
+147. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+148. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+149. expected(selects, [6])
+   => [6/[]]
+150. grade_model(selects)
+   => pass
+151. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+152. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+153. expected(selects, [3])
+   => [3/[]]
+154. grade_model(selects)
+   => pass
+155. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+156. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+157. expected(big_members, [1])
+   => []
+158. grade_model(big_members)
+   => pass
+159. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+160. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+161. expected(selects, [3])
+   => [3/[]]
+162. grade_model(splits)
+   => pass
+163. grade_mistake(big_members, first_only)
+   => wrong([3,3],[3,3],[3])
+164. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+165. expected(pairs, [2,6])
+   => [2-2,2-6,6-2,6-6]
+166. grade_model(selects)
+   => pass
+167. grade_mistake(splits, forgets_empty)
+   => wrong([],[[]+[]],[])
+168. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+169. expected(pairs, [])
+   => []
+170. grade_model(selects)
+   => pass
+171. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+172. task(selects)
+   => "List every element with the rest, as X/Rest pairs, as one list."
+173. expected(selects, [4])
+   => [4/[]]
+174. grade_model(splits)
+   => pass
+175. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+176. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+177. expected(big_members, [3])
+   => [3]
+178. grade_model(pairs)
+   => pass
+179. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+180. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+181. expected(splits, [0,2,2,5])
+   => [[]+[0,2,2,5],[0]+[2,2,5],[0,2]+[2,5],[0,2,2]+[5],[0,2,2,5]+[]]
+182. grade_model(pairs)
+   => pass
+183. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+184. task(pairs)
+   => "List every pair X-Y of members, in order, as one list."
+185. expected(pairs, [5,3,4])
+   => [5-5,5-3,5-4,3-5,3-3,3-4,4-5,4-3,4-4]
+186. grade_model(big_members)
+   => pass
+187. grade_mistake(pairs, no_repeats)
+   => wrong([1],[1-1],[])
+188. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+189. expected(selects, [1])
+   => [1/[]]
+190. grade_model(pairs)
+   => pass
+191. grade_mistake(big_members, not_a_list)
+   => wrong([],[],fails)
+192. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
+193. expected(big_members, [1])
+   => []
+194. grade_model(big_members)
+   => pass
+195. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+196. task(big_members)
+   => "List the members greater than 2, in order, as one list."
+197. expected(big_members, [])
+   => []
+198. grade_model(big_members)
+   => pass
+199. grade_mistake(selects, sorted)
+   => wrong([3,1],[3/[1],1/[3]],[1/[3],3/[1]])
+200. task(splits)
+   => "List every way to split the list in two, as A+B pairs, as one list."
